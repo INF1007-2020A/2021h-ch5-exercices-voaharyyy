@@ -31,10 +31,11 @@ def prime_integer_summation() -> int:
                 return True
 
     nombre_premier = 0
-    nombre_evalue = 2
-    somme = 0
-    while nombre_premier < 100 :
+    nombre_evalue = 3
+    somme = 2
+    while nombre_premier < 99 :
         if est_premier(nombre_evalue):
+            print(nombre_evalue)
             somme = somme + nombre_evalue
             nombre_premier += 1
         nombre_evalue += 1
