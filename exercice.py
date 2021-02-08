@@ -14,17 +14,32 @@ def convert_to_absolute(number: float) -> float:
 
 def use_prefixes() -> List[str]:
     prefixes, suffixe = 'JKLMNOPQ', 'ack'
-    for c in prefixes:
-       noms = c + suffixe
-       List = List + [""]
-      # print(noms)
-       List.insert(noms)
+    liste_nom = []
+    for pre in prefixes:
+       liste_nom.append(pre + suffixe)
 
-    return List
+    return liste_nom
 
 
 def prime_integer_summation() -> int:
-    return 0
+
+    def est_premier(entier: int) -> bool:
+        for i in range(2, entier, 1):
+            if entier % i == 0:
+                return False
+            else:
+                return True
+
+    nombre_premier = 0
+    nombre_evalue = 2
+    somme = 0
+    while nombre_premier < 100 :
+        if est_premier(nombre_evalue):
+            somme = somme + nombre_evalue
+            nombre_premier += 1
+        nombre_evalue += 1
+
+    return somme
 
 
 def factorial(number: int) -> int:
