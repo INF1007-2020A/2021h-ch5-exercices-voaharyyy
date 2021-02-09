@@ -31,9 +31,9 @@ def prime_integer_summation() -> int:
                 return True
 
     nombre_premier = 0
-    nombre_evalue = 3
-    somme = 2
-    while nombre_premier < 99 :
+    nombre_evalue = 2
+    somme = 0
+    while nombre_premier < 100 :
         if est_premier(nombre_evalue):
             print(nombre_evalue)
             somme = somme + nombre_evalue
@@ -44,7 +44,10 @@ def prime_integer_summation() -> int:
 
 
 def factorial(number: int) -> int:
-    return 0
+    resultat = 1
+    for i in range(number, 0, -1):
+        resultat = resultat*i
+    return resultat
 
 
 def use_continue() -> None:
