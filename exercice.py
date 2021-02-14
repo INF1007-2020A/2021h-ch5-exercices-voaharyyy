@@ -22,25 +22,22 @@ def use_prefixes() -> List[str]:
 
 
 def prime_integer_summation() -> int:
+    nombre = 6
+    nombre_premier = [2, 3, 5]
 
-    def est_premier(entier: int) -> bool:
-        for i in range(2, entier, 1):
-            if entier % i == 0:
-                return False
-            else:
-                return True
+    while len(nombre_premier) < 100:
+        premier = True
 
-    nombre_premier = 0
-    nombre_evalue = 2
-    somme = 0
-    while nombre_premier < 100 :
-        if est_premier(nombre_evalue):
-            print(nombre_evalue)
-            somme = somme + nombre_evalue
-            nombre_premier += 1
-        nombre_evalue += 1
+        for i in range(2, nombre // 2):
+            if (nombre % i == 0):
+                premier = False
+                break
 
-    return somme
+        if premier:
+            nombre_premier.append(nombre)
+        nombre += 1
+
+    return sum(nombre_premier)
 
 
 def factorial(number: int) -> int:
@@ -59,8 +56,22 @@ def use_continue() -> None:
 
 
 def verify_ages(groups: List[List[int]]) -> List[bool]:
-    return []
+   liste_acceptance = []
+   for liste in groups:
+       if (len(liste)<=10 and len(liste)>3):
+           if 25 in liste :
+               liste_acceptance.append(True)
+           else:
+               for age in liste:
+                   if age<18:
+                       liste_acceptance.append(False)
+                       break
+                   elif age>70 and 50 in liste:
+                       liste_acceptance.append(False)
+       else:
+           liste_acceptance.append(False)
 
+   return liste_acceptance
 
 def main() -> None:
     number = -4.325
